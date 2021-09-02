@@ -1,0 +1,10 @@
+# Since official repositories are gone, use vault.centos.org instead.
+
+[fasttrack]
+name=CentOS-5 - fasttrack
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=fasttrack
+#baseurl=http://mirror.centos.org/centos/$releasever/fasttrack/$basearch/
+baseurl=http://vault.centos.org/5.11/fasttrack/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
