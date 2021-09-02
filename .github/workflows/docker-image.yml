@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: dev-
+      DT: 
 
     steps:
       # ソースを取得
@@ -37,7 +38,7 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}aws-php74:latest
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}aws-php74:$(date +%s)
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}aws-php74:${{ $(date +%s) }}
 
 #    - name: Build the Docker image
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
