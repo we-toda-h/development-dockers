@@ -1,6 +1,12 @@
 
 FROM amazonlinux:2
 
+LABEL maintainer "wetoda <we-toda@m.pscsrv.co.jp>"
+LABEL org.opencontainers.image.authors="wetoda <we-toda@m.pscsrv.co.jp>"
+LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-dockers"
+LABEL org.opencontainers.image.source="https://github.com/we-toda-h/development-dockers/blob/main/aws-php/aws-php74/Dockerfile"
+LABEL org.opencontainers.image.version="0.0.1"
+
 # 初期設定
 RUN yum install -y glibc-langpack-ja less ;
 

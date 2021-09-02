@@ -3,15 +3,13 @@ name: Docker Image CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: dev-img
+      IMAGE_NAME: dev-
 
     steps:
       # ソースを取得
@@ -28,7 +26,8 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.CF_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+#          password: ${{ secrets.CF_PAT }}
 
       # docker build実施
       - name: Build and push
@@ -37,8 +36,8 @@ jobs:
           context: aws-php/aws-php74/.
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}-aws-php74:latest
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}-aws-php74:1.0.0
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}aws-php74:latest
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}aws-php74:$(date +%s)
 
 #    - name: Build the Docker image
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
