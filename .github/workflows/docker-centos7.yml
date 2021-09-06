@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'centos/c7**'
+      - 'centos-php/centos7**'
 
 jobs:
 
