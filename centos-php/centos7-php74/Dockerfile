@@ -55,6 +55,9 @@ RUN yum --enablerepo=epel,city-fan.org,remi,remi-php74 \
 ## RUN mv /etc/localtime /etc/localtime.org && \
 ##     ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
+# httpdサービスを有効化
+RUN yum -y install httpd; yum clean all; systemctl enable httpd.service
+
 WORKDIR /
 
 # 作業ファイル削除
