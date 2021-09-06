@@ -18,10 +18,10 @@ RUN rpm --import https://rpms.remirepo.net/RPM-GPG-KEY-remi ; \
 RUN rpm --import https://mirror.city-fan.org/ftp/contrib/yum-repo/CITY-FAN.ORG-GPG-KEY ; \
     yum install -y https://mirror.city-fan.org/ftp/contrib/yum-repo/city-fan.org-release-2-1.rhel7.noarch.rpm
 
-# curlをopenssl用にビルドしなおしたものを rpm からインストールする
-COPY ./rpms /usr/local/src/rpms
-WORKDIR /usr/local/src/rpms/x86_64
-
+## # curlをopenssl用にビルドしなおしたものを rpm からインストールする
+## COPY ./rpms /usr/local/src/rpms
+## WORKDIR /usr/local/src/rpms/x86_64
+##
 ## RUN yum --enablerepo=epel,city-fan.org \
 ##         localinstall -y \
 ##         curl-7.72.0-2.0.cf.rhel7.x86_64.rpm \
@@ -36,8 +36,7 @@ RUN yum --enablerepo=epel,city-fan.org,remi,remi-php74 \
         install -y \
         openssl openssl-devel curl libcurl \
         php php-gd php-imap php-json php-mbstring php-pgsql php-xml php-bcmath \
-        php-pecl-mcrypt php-pecl-zip \
-        php-pecl-xdebug
+        php-pecl-mcrypt php-pecl-zip
 
 # install phan
 # RUN yum install -y --enablerepo=epel,remi,remi-php74 composer

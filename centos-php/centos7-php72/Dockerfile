@@ -23,8 +23,7 @@ RUN yum --enablerepo=epel,city-fan.org \
         install -y \
         openssl openssl-devel \
         php php-gd php-imap php-json php-mbstring php-pgsql php-xml php-bcmath \
-        php-pecl-mcrypt php-pecl-zip \
-        php-pecl-xdebug
+        php-pecl-mcrypt php-pecl-zip
 
 # install phan
 # RUN yum install -y --enablerepo=epel,remi,remi-php72 composer
