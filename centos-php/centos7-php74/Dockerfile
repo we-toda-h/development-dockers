@@ -1,5 +1,12 @@
 
-FROM wetoda/c7_systemd_httpd
+## FROM wetoda/c7_systemd_httpd
+FROM ghcr.io/we-toda-h/centos7-systemd
+
+LABEL maintainer "wetoda <we-toda@m.pscsrv.co.jp>"
+LABEL org.opencontainers.image.authors="wetoda <we-toda@m.pscsrv.co.jp>"
+LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-dockers"
+LABEL org.opencontainers.image.source="https://github.com/we-toda-h/development-dockers/blob/main/centos-php/centos7-php74/Dockerfile"
+LABEL org.opencontainers.image.version="0.0.1"
 
 RUN yum update -y ; \
     yum install -y epel-release wget upstart;
@@ -15,13 +22,19 @@ RUN rpm --import https://mirror.city-fan.org/ftp/contrib/yum-repo/CITY-FAN.ORG-G
 COPY ./rpms /usr/local/src/rpms
 WORKDIR /usr/local/src/rpms/x86_64
 
-RUN yum --enablerepo=epel,city-fan.org \
-        localinstall -y \
-        curl-7.72.0-2.0.cf.rhel7.x86_64.rpm \
-        libcurl-7.72.0-2.0.cf.rhel7.x86_64.rpm && \
-    yum --enablerepo=epel,remi,remi-php74 \
+## RUN yum --enablerepo=epel,city-fan.org \
+##         localinstall -y \
+##         curl-7.72.0-2.0.cf.rhel7.x86_64.rpm \
+##         libcurl-7.72.0-2.0.cf.rhel7.x86_64.rpm && \
+##     yum --enablerepo=epel,remi,remi-php74 \
+##         install -y \
+##         openssl openssl-devel \
+##         php php-gd php-imap php-json php-mbstring php-pgsql php-xml php-bcmath \
+##         php-pecl-mcrypt php-pecl-zip \
+##         php-pecl-xdebug
+RUN yum --enablerepo=epel,city-fan.org,remi,remi-php74 \
         install -y \
-        openssl openssl-devel \
+        openssl openssl-devel curl libcurl \
         php php-gd php-imap php-json php-mbstring php-pgsql php-xml php-bcmath \
         php-pecl-mcrypt php-pecl-zip \
         php-pecl-xdebug
