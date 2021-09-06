@@ -1,6 +1,10 @@
 FROM centos:7
 
 LABEL maintainer "wetoda <we-toda@m.pscsrv.co.jp>"
+LABEL org.opencontainers.image.authors="wetoda <we-toda@m.pscsrv.co.jp>"
+LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-dockers"
+LABEL org.opencontainers.image.source="https://github.com/we-toda-h/development-dockers/blob/main/centos/c7_systemd/Dockerfile"
+LABEL org.opencontainers.image.version="0.0.1"
 
 # 日本語環境設定
 RUN sed -i -e '/override_install_langs/s/$/,ja_JP.utf8/g' /etc/yum.conf && \

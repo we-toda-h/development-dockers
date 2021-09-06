@@ -1,16 +1,15 @@
-name: Docker Image CI
+name: Docker Image CI (centos7)
 
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'centos/c7**'
 
 jobs:
 
-  build:
+  build-centos7-systemd:
     runs-on: ubuntu-latest
-    env:
-      IMAGE_NAME: dev-
-      DT: 
 
     steps:
       # 現在日取得
@@ -36,14 +35,14 @@ jobs:
 #          password: ${{ secrets.CF_PAT }}
 
       # docker build実施
-      - name: Build and push
+      - name: Build and push (centos7-systemd)
         uses: docker/build-push-action@v2
         with:
-          context: aws-php/aws-php74/.
+          context: centos/c7_systemd/.
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}aws-php74:latest
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}aws-php74:${{ steps.date.outputs.date }}
+            ghcr.io/${{ github.repository_owner }}/centos7-systemd:latest
+            ghcr.io/${{ github.repository_owner }}/centos7-systemd:${{ steps.date.outputs.date }}
 
 #    - name: Build the Docker image
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
