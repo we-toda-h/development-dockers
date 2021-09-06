@@ -27,5 +27,5 @@ docker run --rm --privileged -it -d  \
            -v ./docker/log:/var/log/output \
            -v ./docker/aws-php74-init.d:/docker-entrypoint-init.d \
            -p 9074:80 \
-           --name aws-php74 wetoda/aws-php74
+           --name aws-php74 ghcr.io/we-toda-h/aws-php74
 ```
