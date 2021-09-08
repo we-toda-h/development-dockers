@@ -1,5 +1,12 @@
 
-FROM wetoda/c5_vault
+## FROM wetoda/c5_vault
+FROM ghcr.io/we-toda-h/centos5-vault
+
+LABEL maintainer "wetoda <we-toda@m.pscsrv.co.jp>"
+LABEL org.opencontainers.image.authors="wetoda <we-toda@m.pscsrv.co.jp>"
+LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-dockers/tree/main/centos-php/centos5-php55"
+LABEL org.opencontainers.image.source="https://github.com/we-toda-h/development-dockers/blob/main/centos-php/centos5-php55/Dockerfile"
+LABEL org.opencontainers.image.version="0.0.1"
 
 RUN yum update -y; yum install -y less epel-release;
 

@@ -4,7 +4,7 @@ FROM ghcr.io/we-toda-h/centos7-systemd
 
 LABEL maintainer "wetoda <we-toda@m.pscsrv.co.jp>"
 LABEL org.opencontainers.image.authors="wetoda <we-toda@m.pscsrv.co.jp>"
-LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-dockers"
+LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-dockers/tree/main/centos-php/centos7-php74"
 LABEL org.opencontainers.image.source="https://github.com/we-toda-h/development-dockers/blob/main/centos-php/centos7-php74/Dockerfile"
 LABEL org.opencontainers.image.version="0.0.1"
 

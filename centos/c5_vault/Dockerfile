@@ -2,7 +2,7 @@ FROM centos:5
 
 LABEL maintainer "wetoda <we-toda@m.pscsrv.co.jp>"
 LABEL org.opencontainers.image.authors="wetoda <we-toda@m.pscsrv.co.jp>"
-LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-dockers"
+LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-dockers/tree/main/centos/c5_vault"
 LABEL org.opencontainers.image.source="https://github.com/we-toda-h/development-dockers/blob/main/centos/c5_vault/Dockerfile"
 LABEL org.opencontainers.image.version="0.0.1"
 
