@@ -35,7 +35,7 @@ RUN rpm --import https://mirror.city-fan.org/ftp/contrib/yum-repo/CITY-FAN.ORG-G
 RUN yum --enablerepo=epel,city-fan.org,remi,remi-php56 \
         install -y \
         openssl openssl-devel curl libcurl \
-        php php-gd php-imap php-json php-mbstring php-pgsql php-xml php-bcmath php-mcrypt \
+        php php-gd php-json php-mbstring php-pgsql php-xml php-bcmath php-mcrypt \
         php-pecl-mcrypt php-pecl-zip
 
 # install phan
