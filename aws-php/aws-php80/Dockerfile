@@ -3,8 +3,8 @@ FROM amazonlinux:2
 
 LABEL maintainer "wetoda <we-toda@m.pscsrv.co.jp>"
 LABEL org.opencontainers.image.authors="wetoda <we-toda@m.pscsrv.co.jp>"
-LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-dockers/tree/main/aws-php/aws-php74"
-LABEL org.opencontainers.image.source="https://github.com/we-toda-h/development-dockers/blob/main/aws-php/aws-php74/Dockerfile"
+LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-dockers/tree/main/aws-php/aws-php80"
+LABEL org.opencontainers.image.source="https://github.com/we-toda-h/development-dockers/blob/main/aws-php/aws-php80/Dockerfile"
 LABEL org.opencontainers.image.version="0.0.1"
 
 # 初期設定
@@ -13,8 +13,9 @@ RUN yum install -y glibc-langpack-ja less ;
 ## RUN yum update -y ; \
 ##     yum install -y epel-release wget;
 
-# PHP7.4 を有効にする
-RUN amazon-linux-extras install php7.4
+# PHP8.0, epel を有効にする
+RUN amazon-linux-extras install php8.0 && \
+    amazon-linux-extras install epel
 
 # PHPをインストール
 RUN yum install -y openssl curl && \
