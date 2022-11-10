@@ -7,6 +7,8 @@ on:
       - 'centos/c7**'
       - 'centos-php/centos7**'
 
+  workflow_dispatch:
+
 jobs:
 
   build-centos7-systemd:
