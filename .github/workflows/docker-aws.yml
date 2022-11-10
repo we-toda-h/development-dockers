@@ -16,7 +16,7 @@ jobs:
       # 現在日取得
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "date=$(date +'%Y-%m-%d')"  >>$GITHUB_OUTPUT
 
       # ソースを取得
       - name: checkout
@@ -52,7 +52,7 @@ jobs:
       # 現在日取得
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "date=$(date +'%Y-%m-%d')" >>$GITHUB_OUTPUT
 
       # ソースを取得
       - name: checkout
