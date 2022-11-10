@@ -16,7 +16,7 @@ ENV LANG="ja_JP.UTF-8" \
 RUN mv /etc/localtime /etc/localtime.org && \
     ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-RUN yum -y update;yum -y install less; yum clean all;
+RUN yum -y update ; yum -y install less ; yum clean all ;
 
 WORKDIR /
 

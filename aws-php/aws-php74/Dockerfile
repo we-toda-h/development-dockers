@@ -8,7 +8,7 @@ LABEL org.opencontainers.image.source="https://github.com/we-toda-h/development-
 LABEL org.opencontainers.image.version="0.0.1"
 
 # 初期設定
-RUN yum install -y glibc-langpack-ja less ;
+RUN yum install -y glibc-langpack-ja less ; yum update -y ;
 
 ## RUN yum update -y ; \
 ##     yum install -y epel-release wget;
@@ -44,7 +44,7 @@ RUN mv /etc/localtime /etc/localtime.org && \
 WORKDIR /
 
 # 作業ファイル削除
-RUN rm -rf /usr/local/src/* ; yum clean all
+RUN rm -rf /usr/local/src/* ; yum clean all ;
 
 # httpd サービスの自動起動設定
 RUN systemctl enable httpd.service

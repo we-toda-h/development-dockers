@@ -18,7 +18,7 @@ RUN mv /etc/localtime /etc/localtime.org && \
     ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
     sed -i -e "s/ZONE=\"UTC\"/ZONE=\"Asia\/Tokyo\"/g" /etc/sysconfig/clock
 
-RUN yum -y update;yum -y install less; yum clean all;
+RUN yum -y update ; yum -y install less ; yum clean all ;
 
 WORKDIR /
 

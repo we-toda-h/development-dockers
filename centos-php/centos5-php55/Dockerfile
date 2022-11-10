@@ -8,7 +8,7 @@ LABEL org.opencontainers.image.url="https://github.com/we-toda-h/development-doc
 LABEL org.opencontainers.image.source="https://github.com/we-toda-h/development-dockers/blob/main/centos-php/centos5-php55/Dockerfile"
 LABEL org.opencontainers.image.version="0.0.1"
 
-RUN yum update -y; yum install -y less epel-release;
+RUN yum update -y ; yum install -y less epel-release;
 
 # install [remi] repositroy
 RUN rpm --import http://rpms.remirepo.net/RPM-GPG-KEY-remi ; \
