@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'centos/c5**'
+  workflow_dispatch:
 
 jobs:
 
