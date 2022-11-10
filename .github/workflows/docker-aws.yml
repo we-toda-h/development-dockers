@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'aws-php/**'
+  workflow_dispatch:
 
 jobs:
 
