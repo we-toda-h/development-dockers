@@ -20,15 +20,15 @@ jobs:
 
       # ソースを取得
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # docker環境準備
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
 
       # dockerhubログイン
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -37,7 +37,7 @@ jobs:
 
       # docker build実施
       - name: Build and push (aws-php74)
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: aws-php/aws-php74/.
           push: true
@@ -56,15 +56,15 @@ jobs:
 
       # ソースを取得
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # docker環境準備
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
 
       # dockerhubログイン
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -73,7 +73,7 @@ jobs:
 
       # docker build実施
       - name: Build and push (aws-php80)
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: aws-php/aws-php80/.
           push: true
