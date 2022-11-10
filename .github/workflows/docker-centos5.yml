@@ -16,19 +16,19 @@ jobs:
       # 現在日取得
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       # ソースを取得
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # docker環境準備
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
 
       # dockerhubログイン
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -36,7 +36,7 @@ jobs:
 
       # docker build実施
       - name: Build and push (centos5-vault)
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: centos/c5_vault/.
           push: true

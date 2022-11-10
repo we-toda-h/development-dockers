@@ -15,8 +15,10 @@ RUN yum update -y ; \
 RUN rpm --import https://rpms.remirepo.net/RPM-GPG-KEY-remi ; \
     yum install -y https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 # add repositroy city-fan
-RUN rpm --import https://mirror.city-fan.org/ftp/contrib/yum-repo/CITY-FAN.ORG-GPG-KEY ; \
-    yum install -y https://mirror.city-fan.org/ftp/contrib/yum-repo/city-fan.org-release-2-1.rhel7.noarch.rpm
+## RUN rpm --import https://mirror.city-fan.org/ftp/contrib/yum-repo/CITY-FAN.ORG-GPG-KEY ; \
+##     yum install -y https://mirror.city-fan.org/ftp/contrib/yum-repo/city-fan.org-release-2-1.rhel7.noarch.rpm
+RUN yum install -y http://www.city-fan.org/ftp/contrib/yum-repo/city-fan.org-release-3-4.rhel7.noarch.rpm
+
 
 ## # curlをopenssl用にビルドしなおしたものを rpm からインストールする
 ## COPY ./rpms /usr/local/src/rpms
@@ -26,7 +28,7 @@ RUN rpm --import https://mirror.city-fan.org/ftp/contrib/yum-repo/CITY-FAN.ORG-G
 ##         localinstall -y \
 ##         curl-7.72.0-2.0.cf.rhel7.x86_64.rpm \
 ##         libcurl-7.72.0-2.0.cf.rhel7.x86_64.rpm && \
-##  yum --enablerepo=epel,remi,remi-php56 \
+##     yum --enablerepo=epel,remi,remi-php56 \
 ##         install -y \
 ##         openssl openssl-devel \
 ##         php php-gd php-imap php-json php-mbstring php-pgsql php-xml php-bcmath php-mcrypt \

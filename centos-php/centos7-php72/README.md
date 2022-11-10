@@ -27,5 +27,5 @@ docker run --rm --privileged -it -d  \
            -v ./docker/log:/var/log/output \
            -v ./docker/centos7-php72-init.d:/docker-entrypoint-init.d \
            -p 9072:80 \
-           --name c7-php72 wetoda/centos7-php72 /sbin/init
+           --name c7-php72 ghcr.io/we-toda-h/centos7-php72 /sbin/init
 ```
