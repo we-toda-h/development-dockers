@@ -14,9 +14,9 @@ RUN yum update -y ; yum install -y epel-release wget upstart;
 RUN rpm --import https://rpms.remirepo.net/RPM-GPG-KEY-remi ; \
     yum install -y https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 # add repositroy city-fan
-## RUN rpm --import https://mirror.city-fan.org/ftp/contrib/yum-repo/CITY-FAN.ORG-GPG-KEY ; \
-##     yum install -y https://mirror.city-fan.org/ftp/contrib/yum-repo/city-fan.org-release-2-1.rhel7.noarch.rpm
-RUN yum install -y http://www.city-fan.org/ftp/contrib/yum-repo/city-fan.org-release-3-7.rhel7.noarch.rpm
+RUN rpm --import https://mirror.city-fan.org/ftp/contrib/GPG-KEYS/RPM-GPG-KEY-city-fan.org-rhel-7 ; \
+    yum install -y https://mirror.city-fan.org/ftp/contrib/yum-repo/city-fan.org-release-3-7.rhel7.noarch.rpm
+## RUN yum install -y http://www.city-fan.org/ftp/contrib/yum-repo/city-fan.org-release-3-7.rhel7.noarch.rpm
 
 
 ## # curlをopenssl用にビルドしなおしたものを rpm からインストールする
